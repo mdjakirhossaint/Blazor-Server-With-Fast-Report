@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="04/02/2022 13:49:29" ReportInfo.Modified="07/17/2022 00:33:32" ReportInfo.CreatorVersion="2022.2.2.0">
+  <Styles Name="Gray">
+    <Style Name="Title" Font="Arial, 12pt, style=Bold"/>
+    <Style Name="Header" Fill.Color="Gainsboro" Font="Arial, 10pt, style=Bold"/>
+    <Style Name="Group" Font="Arial, 10pt, style=Bold"/>
+    <Style Name="Data" Font="Arial, 10pt"/>
+    <Style Name="Footer" Fill.Color="Gainsboro" Font="Arial, 10pt"/>
+    <Style Name="EvenRows" Fill.Color="WhiteSmoke" Font="Arial, 10pt"/>
+  </Styles>
+  <Dictionary>
+    <MsSqlDataConnection Name="Connection" ConnectionString="rijcmlq+rW0RkboK+/8CKGGYUID3ctBV8q9SvKYxl3iiE7vBnh7Tgou0+4WFf3NfmPSvHVFdUSC+kZC55X/JRex5gRE6VeFe/JWPdsr/hUCFuGbg1PDOILbJfyFyP/GmLQu+tOaJsO73kjdbaLASKGTHlSJvv9aDerH+v4yoQh6weGAvP0fYMCvBvIcyZO2Iep37Iql">
+      <TableDataSource Name="Products" DataType="System.Int32" Enabled="true" TableName="Products">
+        <Column Name="ID" DataType="System.Int32"/>
+        <Column Name="ProductName" DataType="System.String"/>
+        <Column Name="ProductPrice" DataType="System.String"/>
+        <Column Name="Description" DataType="System.String"/>
+        <Column Name="CreateDate" DataType="System.DateTime"/>
+        <Column Name="TblCategoryID" DataType="System.Int32"/>
+      </TableDataSource>
+    </MsSqlDataConnection>
+  </Dictionary>
+  <ReportPage Name="Page1" Watermark.Font="Arial, 60pt">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="37.8">
+      <TextObject Name="Text1" Width="718.2" Height="37.8" Dock="Fill" Text="Expanses" HorzAlign="Center" VertAlign="Center" Font="Arial, 12pt, style=Bold" Style="Title"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="41.8" Width="718.2" Height="28.35">
+      <TextObject Name="Text3" Width="179.55" Height="18.9" Fill.Color="Gainsboro" Text="ID" Font="Arial, 10pt, style=Bold" Style="Header"/>
+      <TextObject Name="Text5" Left="179.55" Width="179.55" Height="18.9" Fill.Color="Gainsboro" Text="ExpanseName" Font="Arial, 10pt, style=Bold" Style="Header"/>
+      <TextObject Name="Text7" Left="359.1" Width="179.55" Height="18.9" Fill.Color="Gainsboro" Text="ExpanseCost" Font="Arial, 10pt, style=Bold" Style="Header"/>
+      <TextObject Name="Text9" Left="538.65" Width="179.55" Height="18.9" Fill.Color="Gainsboro" Text="TblPurchaseDetailID" Font="Arial, 10pt, style=Bold" Style="Header"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="74.15" Width="718.2" Height="18.9" EvenStyle="EvenRows" DataSource="Products">
+      <TextObject Name="Text2" Width="179.55" Height="18.9" Text="[Products.ID]" Font="Arial, 10pt" Style="Data"/>
+      <TextObject Name="Text4" Left="179.55" Width="179.55" Height="18.9" Text="[Products.ProductName]" Font="Arial, 10pt" Style="Data"/>
+      <TextObject Name="Text6" Left="359.1" Width="179.55" Height="18.9" Text="[Products.ProductPrice]" Font="Arial, 10pt" Style="Data"/>
+      <TextObject Name="Text8" Left="538.65" Width="179.55" Height="18.9" Text="[Products.TblCategoryID]" Font="Arial, 10pt" Style="Data"/>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="97.05" Width="718.2" Height="18.9">
+      <TextObject Name="Text10" Width="718.2" Height="18.9" Dock="Fill" Fill.Color="Gainsboro" Text="[PageN]" HorzAlign="Right" Font="Arial, 10pt" Style="Footer"/>
+    </PageFooterBand>
+  </ReportPage>
+</Report>

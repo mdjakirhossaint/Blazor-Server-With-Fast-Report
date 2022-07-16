@@ -1,0 +1,34 @@
+﻿@page "/counter"
+@using FastReport
+@using FastReport.Data
+@using FastReport.Export.PdfSimple
+@using FastReport.Web
+@using FastReportBlazorServer.Data
+@using Microsoft.Extensions.Configuration
+@inject ApplicationDbContext _context
+@inject IWebHostEnvironment _webHostEnvironment
+@inject IConfiguration _configuration
+@using System.Linq
+@using System.IO
+@inject NavigationManager uriHelper
+
+<PageTitle>Counter</PageTitle>
+
+<h1>Counter</h1>
+
+<p role="status">Current count: @currentCount</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+<a class="btn btn-primary" id="btnReport" href="https://localhost:7164/api/Report/Index" target="_blank">Print Report</a>
+
+
+@code {
+    private int currentCount = 0;
+    public WebReport UserWebReport { get; set; }
+
+    private void IncrementCount()
+    {
+        currentCount++;
+    }
+
+}
